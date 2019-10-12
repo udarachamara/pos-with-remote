@@ -1,0 +1,40 @@
+CREATE PROCEDURE [dbo].[sp_UpdateUser]
+	@User_Id int,
+	@Fname nchar(20),
+	@Lname nchar(20),
+	@Phone nchar(15),
+	@Email nvarchar(50),
+	@Address nvarchar(max),
+	@Birthday date,
+	@UserName nchar(20),
+	@Password nvarchar(50),
+	@UserRole nchar(10),
+	@Status nchar(10),
+	@RemoteAction nchar(10),
+	@Access_Level nchar(10),
+	@Modified_by nvarchar(50)
+AS
+BEGIN
+   
+    SET NOCOUNT ON;
+
+    Update [dbo].[Users]
+
+    set Fname = @Fname,
+		Lname = @Lname,
+		Phone = @Phone,
+		Email = @Email,
+		Address = @Address,
+		Birthday = @Birthday,
+		Username = @UserName,
+		Password = @Password,
+		UserRoleFk = @UserRole,
+		Status = @Status,
+		RemoteActionFk = @RemoteAction,
+		Access_Level = @Access_Level,
+		ModifiedBy = @Modified_by,
+		ModifiedAt = GETDATE()
+
+    where User_Id = @User_Id;
+
+END

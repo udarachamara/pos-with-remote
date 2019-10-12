@@ -1,0 +1,36 @@
+CREATE PROCEDURE [dbo].[sp_SelectUsers]
+	@LoggedUserRoleFk int = 2,
+	@User_Id int = null
+AS
+
+BEGIN
+	IF (@LoggedUserRoleFk = 1)
+	BEGIN
+		SELECT u.Fname as FirstName, u.Lname as LastName, u.Phone as Phone, 
+				u.Email as Email, u.Address as Address , u.Birthday as BirthDay,
+				u.Username as UserName, u.Password as Password, u.UserRoleFk as UserRole,
+				u.Status as Status, u.CreateAt as CreateAt, u.Access_Level as AccessLevel
+		FROM Users u
+		INNER JOIN UserRoles ON UserRoles.UserRoleId=Users.User_Id;
+	END
+
+	ELSE IF(@Logged_User_Role = 'user')
+	BEGIN
+		SELECT u.Fname as FirstName, u.Lname as LastName, u.Phone as Phone, 
+				u.Email as Email, u.Address as Address, u.Birthday as BirthDay,
+				u.Username as UserName, u.Password as Password, u.Status as Status, 
+				u.CreateAt as CreateAt
+		FROM Users u
+		WHERE u.User_Id = @User_Id
+
+	END
+
+	ELSE
+	BEGIN
+		SELECT u.Fname as FirstName, u.Lname as LastName, u.Phone as Phone, 
+				u.Email as Email, u.Address as Address , u.Birthday as BirthDay,
+				u.Status as Status, u.CreateAt as CreateAt
+		FROM Users u
+	END
+
+END

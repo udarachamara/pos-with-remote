@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Category_Id" />
+    </Key>
+    <Property Name="Category_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Category_Status" Type="nchar" MaxLength="20" />
+    <Property Name="Create_At" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="Remote_Action" Type="nchar" MaxLength="20" />
+    <Property Name="Category" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Customer_Id" />
+    </Key>
+    <Property Name="Customer_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NIC" Type="nchar" MaxLength="10" />
+    <Property Name="Fname" Type="nchar" MaxLength="20" />
+    <Property Name="Lname" Type="nchar" MaxLength="20" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Birthday" Type="date" />
+    <Property Name="Phone" Type="nchar" MaxLength="15" />
+    <Property Name="Customer_Status" Type="nchar" MaxLength="10" />
+    <Property Name="Title" Type="nchar" MaxLength="10" />
+    <Property Name="Due_Balance" Type="float" />
+    <Property Name="Create_At" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="Remote_Action" Type="nchar" MaxLength="20" />
+    <Property Name="Customer" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Customer_Phone">
+    <Key>
+      <PropertyRef Name="Customer_Id" />
+      <PropertyRef Name="Phone" />
+    </Key>
+    <Property Name="Customer_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Phone" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Discount_Card">
+    <Key>
+      <PropertyRef Name="Card_No" />
+    </Key>
+    <Property Name="Card_No" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Create_At" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="Remote_Action" Type="nchar" MaxLength="20" />
+    <Property Name="Customer_Id" Type="int" Nullable="false" />
+    <Property Name="Discount_Card" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Invoice">
+    <Key>
+      <PropertyRef Name="Invoice_Id" />
+    </Key>
+    <Property Name="Invoice_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Next_Payment" Type="nchar" MaxLength="10" />
+    <Property Name="Total_Bill_Price" Type="float" />
+    <Property Name="Sale_Type" Type="float" />
+    <Property Name="Sale_Status" Type="nchar" MaxLength="10" />
+    <Property Name="Sale_Ref_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Bill_Discount" Type="float" />
+    <Property Name="Due_Date" Type="date" />
+    <Property Name="Create_At" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="Remote_Action" Type="nchar" MaxLength="20" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+    <Property Name="Customer_Id" Type="int" Nullable="false" />
+    <Property Name="Invoice" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Invoice_Item">
+    <Key>
+      <PropertyRef Name="Item_Id" />
+    </Key>
+    <Property Name="Item_Sell_Price" Type="float" />
+    <Property Name="Item_Quantity" Type="int" />
+    <Property Name="Create_At" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="Remote_Action" Type="nchar" MaxLength="20" />
+    <Property Name="Item_Id" Type="int" Nullable="false" />
+    <Property Name="Invoice_Id" Type="int" Nullable="false" />
+    <Property Name="Invoice_Item" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="Item_Id" />
+    </Key>
+    <Property Name="Item_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Item_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Retail_Price" Type="float" />
+    <Property Name="Retail_Discount" Type="float" />
+    <Property Name="Unit" Type="int" />
+    <Property Name="Category" Type="nchar" MaxLength="20" />
+    <Property Name="Sub_Category" Type="nchar" MaxLength="20" />
+    <Property Name="Min_Stock" Type="nchar" MaxLength="20" />
+    <Property Name="Stock_Quantity" Type="int" />
+    <Property Name="label_Price" Type="float" />
+    <Property Name="Barcode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Wholesale_Price" Type="float" />
+    <Property Name="Wholesale_Discount" Type="float" />
+    <Property Name="Status" Type="nchar" MaxLength="20" />
+    <Property Name="Stock_Updated_At" Type="datetime" />
+    <Property Name="Remote_Action" Type="nchar" MaxLength="20" />
+    <Property Name="Sub_Category_Id" Type="int" Nullable="false" />
+    <Property Name="Item" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Overdue_Invoice">
+    <Key>
+      <PropertyRef Name="Invoice_Id" />
+    </Key>
+    <Property Name="Invoice_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Invoice_Date" Type="date" />
+    <Property Name="Stock_Discount" Type="float" />
+    <Property Name="Overdue_Invoice" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="Payment_Id" />
+    </Key>
+    <Property Name="Payment_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Payment_Type" Type="nchar" MaxLength="20" />
+    <Property Name="Amount" Type="float" />
+    <Property Name="Create_At" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="Remote_Action" Type="nchar" MaxLength="20" />
+    <Property Name="Invoice_id" Type="int" Nullable="false" />
+    <Property Name="Payment" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Regular_Invoice">
+    <Key>
+      <PropertyRef Name="Invoice_Id" />
+    </Key>
+    <Property Name="Invoice_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Paid_Amount" Type="float" />
+    <Property Name="Regular_Invoice" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sub_Category">
+    <Key>
+      <PropertyRef Name="Sub_Category_Id" />
+    </Key>
+    <Property Name="Sub_Category_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sub_Category_Name" Type="nchar" MaxLength="50" />
+    <Property Name="Category_Status" Type="nchar" MaxLength="20" />
+    <Property Name="Create_At" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="Remote_Action" Type="nchar" MaxLength="20" />
+    <Property Name="Category_Id" Type="int" Nullable="false" />
+    <Property Name="Sub_Category" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="Supplier_Id" />
+    </Key>
+    <Property Name="Supplier_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Supplier_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Supplier_Company" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nchar" MaxLength="10" />
+    <Property Name="Status" Type="nchar" MaxLength="20" />
+    <Property Name="Create_At" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="Remote_Action" Type="nchar" MaxLength="20" />
+    <Property Name="Supplier" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Supplier_Item">
+    <Key>
+      <PropertyRef Name="Item_Id" />
+      <PropertyRef Name="Supplier_Id" />
+    </Key>
+    <Property Name="Item_Id" Type="int" Nullable="false" />
+    <Property Name="Supplier_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Supplier_Phone">
+    <Key>
+      <PropertyRef Name="Supplier_Id" />
+      <PropertyRef Name="Phone" />
+    </Key>
+    <Property Name="Supplier_Id" Type="int" Nullable="false" />
+    <Property Name="Phone" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Supplier_Stock">
+    <Key>
+      <PropertyRef Name="SS_ID" />
+    </Key>
+    <Property Name="SS_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Invoice_No" Type="int" Nullable="false" />
+    <Property Name="Invoice_Date" Type="date" />
+    <Property Name="Stock_Total_Price" Type="float" />
+    <Property Name="Stock_Discount" Type="float" />
+    <Property Name="Create_At" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="Remote_Action" Type="nchar" MaxLength="20" />
+    <Property Name="Supplier_Id" Type="int" Nullable="false" />
+    <Property Name="Supplier_Stock" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Supplier_Stock_Item">
+    <Key>
+      <PropertyRef Name="Item_Id" />
+    </Key>
+    <Property Name="Supplier_Invoice_No" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Item_Ref_Id" Type="nchar" MaxLength="20" />
+    <Property Name="Item_Stock" Type="int" />
+    <Property Name="Item_Buying_Price" Type="float" />
+    <Property Name="Buying_Stock" Type="int" />
+    <Property Name="Buying_Discount" Type="float" />
+    <Property Name="Create_At" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="Remote_Action" Type="nchar" MaxLength="20" />
+    <Property Name="SS_Id" Type="int" Nullable="false" />
+    <Property Name="Item_Id" Type="int" Nullable="false" />
+    <Property Name="Supplier_Stock_Item" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="User_Id" />
+    </Key>
+    <Property Name="User_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fname" Type="nchar" MaxLength="20" />
+    <Property Name="Lname" Type="nchar" MaxLength="20" />
+    <Property Name="Phone" Type="nchar" MaxLength="15" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Birthday" Type="date" />
+    <Property Name="Username" Type="nchar" MaxLength="20" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserRole" Type="nchar" MaxLength="10" />
+    <Property Name="Status" Type="nchar" MaxLength="10" />
+    <Property Name="CreateAt" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="RemoteAction" Type="nchar" MaxLength="20" />
+    <Property Name="Access_Level" Type="nchar" MaxLength="10" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Function Name="sp_DeleteUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="User_Id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_insertUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Fname" Type="nchar" Mode="In" />
+    <Parameter Name="Lname" Type="nchar" Mode="In" />
+    <Parameter Name="Phone" Type="nchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="Address" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Birthday" Type="date" Mode="In" />
+    <Parameter Name="UserName" Type="nchar" Mode="In" />
+    <Parameter Name="Password" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserRole" Type="nchar" Mode="In" />
+    <Parameter Name="Status" Type="nchar" Mode="In" />
+    <Parameter Name="RemoteAction" Type="nchar" Mode="In" />
+    <Parameter Name="Access_Level" Type="nchar" Mode="In" />
+    <Parameter Name="User" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_SelectUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Logged_User_Role" Type="nchar" Mode="In" />
+    <Parameter Name="User_Id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="User_Id" Type="int" Mode="In" />
+    <Parameter Name="Fname" Type="nchar" Mode="In" />
+    <Parameter Name="Lname" Type="nchar" Mode="In" />
+    <Parameter Name="Phone" Type="nchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="Address" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Birthday" Type="date" Mode="In" />
+    <Parameter Name="UserName" Type="nchar" Mode="In" />
+    <Parameter Name="Password" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserRole" Type="nchar" Mode="In" />
+    <Parameter Name="Status" Type="nchar" Mode="In" />
+    <Parameter Name="RemoteAction" Type="nchar" Mode="In" />
+    <Parameter Name="Access_Level" Type="nchar" Mode="In" />
+    <Parameter Name="User" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="DBModelStoreContainer">
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer_Phone" EntityType="Self.Customer_Phone" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Discount_Card" EntityType="Self.Discount_Card" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Invoice" EntityType="Self.Invoice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Invoice_Item" EntityType="Self.Invoice_Item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Overdue_Invoice" EntityType="Self.Overdue_Invoice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Regular_Invoice" EntityType="Self.Regular_Invoice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sub_Category" EntityType="Self.Sub_Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Supplier_Item" EntityType="Self.Supplier_Item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Supplier_Phone" EntityType="Self.Supplier_Phone" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Supplier_Stock" EntityType="Self.Supplier_Stock" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Supplier_Stock_Item" EntityType="Self.Supplier_Stock_Item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

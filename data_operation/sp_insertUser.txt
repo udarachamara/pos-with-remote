@@ -1,0 +1,35 @@
+CREATE PROCEDURE [dbo].[sp_insertUser]
+	@Fname nchar(20),
+	@Lname nchar(20),
+	@Phone nchar(15),
+	@Email nvarchar(50),
+	@Address nvarchar(max),
+	@Birthday date,
+	@UserName nchar(20),
+	@Password nvarchar(50),
+	@UserRole nchar(10),
+	@Status nchar(10),
+	@RemoteAction nchar(10),
+	@Access_Level nchar(10),
+	@CreateBy nvarchar(50)
+AS
+BEGIN
+   
+    SET NOCOUNT ON;
+
+        INSERT INTO [dbo].[Users](
+			[Fname], [Lname], 
+			[Phone], [Email], [Address], 
+			[Birthday], [Username], [Password],
+			[UserRoleFk], [Status], [RemoteActionFk], 
+			[Access_Level], [CreateBy]
+		)
+        VALUES(@Fname, @Lname, @Phone, 
+				@Email, @Address, @Birthday, 
+				@UserName, @Password, 
+				@UserRole, @Status, @RemoteAction, 
+				@Access_Level, @CreateBy)
+
+    SELECT SCOPE_IDENTITY() AS User_Id
+
+END

@@ -1,0 +1,17 @@
+C:\Users\udara\documents\visual studio 2015\Projects\BookStore\BookStore\bin\Debug\DB.mdf
+C:\Users\udara\documents\visual studio 2015\Projects\BookStore\BookStore\bin\Debug\DB_log.ldf
+C:\Users\udara\documents\visual studio 2015\Projects\BookStore\BookStore\bin\Debug\BookStore.exe.config
+C:\Users\udara\documents\visual studio 2015\Projects\BookStore\BookStore\bin\Debug\BookStore.exe
+C:\Users\udara\documents\visual studio 2015\Projects\BookStore\BookStore\bin\Debug\BookStore.pdb
+C:\Users\udara\documents\visual studio 2015\Projects\BookStore\BookStore\bin\Debug\EntityFramework.dll
+C:\Users\udara\documents\visual studio 2015\Projects\BookStore\BookStore\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\udara\documents\visual studio 2015\Projects\BookStore\BookStore\bin\Debug\EntityFramework.xml
+C:\Users\udara\documents\visual studio 2015\Projects\BookStore\BookStore\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\udara\documents\visual studio 2015\Projects\BookStore\BookStore\obj\Debug\BookStore.csprojResolveAssemblyReference.cache
+C:\Users\udara\documents\visual studio 2015\Projects\BookStore\BookStore\obj\Debug\BookStore.ui.Dashboard.resources
+C:\Users\udara\documents\visual studio 2015\Projects\BookStore\BookStore\obj\Debug\BookStore.FormLogin.resources
+C:\Users\udara\documents\visual studio 2015\Projects\BookStore\BookStore\obj\Debug\BookStore.Properties.Resources.resources
+C:\Users\udara\documents\visual studio 2015\Projects\BookStore\BookStore\obj\Debug\BookStore.csproj.GenerateResource.Cache
+C:\Users\udara\documents\visual studio 2015\Projects\BookStore\BookStore\obj\Debug\BookStore.exe
+C:\Users\udara\documents\visual studio 2015\Projects\BookStore\BookStore\obj\Debug\BookStore.pdb
+C:\Users\udara\documents\visual studio 2015\Projects\BookStore\BookStore\obj\Debug\BookStore.ui.FormDashboard.resources

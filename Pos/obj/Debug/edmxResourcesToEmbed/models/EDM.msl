@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="EDM">
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="DBModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="Category_Id" ColumnName="Category_Id" />
+          <ScalarProperty Name="Category_Name" ColumnName="Category_Name" />
+          <ScalarProperty Name="Category_Status" ColumnName="Category_Status" />
+          <ScalarProperty Name="Create_At" ColumnName="Create_At" />
+          <ScalarProperty Name="Remote_Action" ColumnName="Remote_Action" />
+          <ScalarProperty Name="Category1" ColumnName="Category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="DBModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="Customer_Id" ColumnName="Customer_Id" />
+          <ScalarProperty Name="NIC" ColumnName="NIC" />
+          <ScalarProperty Name="Fname" ColumnName="Fname" />
+          <ScalarProperty Name="Lname" ColumnName="Lname" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Customer_Status" ColumnName="Customer_Status" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Due_Balance" ColumnName="Due_Balance" />
+          <ScalarProperty Name="Create_At" ColumnName="Create_At" />
+          <ScalarProperty Name="Remote_Action" ColumnName="Remote_Action" />
+          <ScalarProperty Name="Customer1" ColumnName="Customer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customer_Phone">
+      <EntityTypeMapping TypeName="DBModel.Customer_Phone">
+        <MappingFragment StoreEntitySet="Customer_Phone">
+          <ScalarProperty Name="Customer_Id" ColumnName="Customer_Id" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Discount_Card">
+      <EntityTypeMapping TypeName="DBModel.Discount_Card">
+        <MappingFragment StoreEntitySet="Discount_Card">
+          <ScalarProperty Name="Card_No" ColumnName="Card_No" />
+          <ScalarProperty Name="Create_At" ColumnName="Create_At" />
+          <ScalarProperty Name="Remote_Action" ColumnName="Remote_Action" />
+          <ScalarProperty Name="Customer_Id" ColumnName="Customer_Id" />
+          <ScalarProperty Name="Discount_Card1" ColumnName="Discount_Card" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Invoices">
+      <EntityTypeMapping TypeName="DBModel.Invoice">
+        <MappingFragment StoreEntitySet="Invoice">
+          <ScalarProperty Name="Invoice_Id" ColumnName="Invoice_Id" />
+          <ScalarProperty Name="Next_Payment" ColumnName="Next_Payment" />
+          <ScalarProperty Name="Total_Bill_Price" ColumnName="Total_Bill_Price" />
+          <ScalarProperty Name="Sale_Type" ColumnName="Sale_Type" />
+          <ScalarProperty Name="Sale_Status" ColumnName="Sale_Status" />
+          <ScalarProperty Name="Sale_Ref_ID" ColumnName="Sale_Ref_ID" />
+          <ScalarProperty Name="Bill_Discount" ColumnName="Bill_Discount" />
+          <ScalarProperty Name="Due_Date" ColumnName="Due_Date" />
+          <ScalarProperty Name="Create_At" ColumnName="Create_At" />
+          <ScalarProperty Name="Remote_Action" ColumnName="Remote_Action" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="Customer_Id" ColumnName="Customer_Id" />
+          <ScalarProperty Name="Invoice1" ColumnName="Invoice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Invoice_Item">
+      <EntityTypeMapping TypeName="DBModel.Invoice_Item">
+        <MappingFragment StoreEntitySet="Invoice_Item">
+          <ScalarProperty Name="Item_Sell_Price" ColumnName="Item_Sell_Price" />
+          <ScalarProperty Name="Item_Quantity" ColumnName="Item_Quantity" />
+          <ScalarProperty Name="Create_At" ColumnName="Create_At" />
+          <ScalarProperty Name="Remote_Action" ColumnName="Remote_Action" />
+          <ScalarProperty Name="Item_Id" ColumnName="Item_Id" />
+          <ScalarProperty Name="Invoice_Id" ColumnName="Invoice_Id" />
+          <ScalarProperty Name="Invoice_Item1" ColumnName="Invoice_Item" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Items">
+      <EntityTypeMapping TypeName="DBModel.Item">
+        <MappingFragment StoreEntitySet="Item">
+          <ScalarProperty Name="Item_Id" ColumnName="Item_Id" />
+          <ScalarProperty Name="Item_Name" ColumnName="Item_Name" />
+          <ScalarProperty Name="Retail_Price" ColumnName="Retail_Price" />
+          <ScalarProperty Name="Retail_Discount" ColumnName="Retail_Discount" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Sub_Category" ColumnName="Sub_Category" />
+          <ScalarProperty Name="Min_Stock" ColumnName="Min_Stock" />
+          <ScalarProperty Name="Stock_Quantity" ColumnName="Stock_Quantity" />
+          <ScalarProperty Name="label_Price" ColumnName="label_Price" />
+          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+          <ScalarProperty Name="Wholesale_Price" ColumnName="Wholesale_Price" />
+          <ScalarProperty Name="Wholesale_Discount" ColumnName="Wholesale_Discount" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Stock_Updated_At" ColumnName="Stock_Updated_At" />
+          <ScalarProperty Name="Remote_Action" ColumnName="Remote_Action" />
+          <ScalarProperty Name="Sub_Category_Id" ColumnName="Sub_Category_Id" />
+          <ScalarProperty Name="Item1" ColumnName="Item" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Overdue_Invoice">
+      <EntityTypeMapping TypeName="DBModel.Overdue_Invoice">
+        <MappingFragment StoreEntitySet="Overdue_Invoice">
+          <ScalarProperty Name="Invoice_Id" ColumnName="Invoice_Id" />
+          <ScalarProperty Name="Invoice_Date" ColumnName="Invoice_Date" />
+          <ScalarProperty Name="Stock_Discount" ColumnName="Stock_Discount" />
+          <ScalarProperty Name="Overdue_Invoice1" ColumnName="Overdue_Invoice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="DBModel.Payment">
+        <MappingFragment StoreEntitySet="Payment">
+          <ScalarProperty Name="Payment_Id" ColumnName="Payment_Id" />
+          <ScalarProperty Name="Payment_Type" ColumnName="Payment_Type" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Create_At" ColumnName="Create_At" />
+          <ScalarProperty Name="Remote_Action" ColumnName="Remote_Action" />
+          <ScalarProperty Name="Invoice_id" ColumnName="Invoice_id" />
+          <ScalarProperty Name="Payment1" ColumnName="Payment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Regular_Invoice">
+      <EntityTypeMapping TypeName="DBModel.Regular_Invoice">
+        <MappingFragment StoreEntitySet="Regular_Invoice">
+          <ScalarProperty Name="Invoice_Id" ColumnName="Invoice_Id" />
+          <ScalarProperty Name="Paid_Amount" ColumnName="Paid_Amount" />
+          <ScalarProperty Name="Regular_Invoice1" ColumnName="Regular_Invoice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sub_Category">
+      <EntityTypeMapping TypeName="DBModel.Sub_Category">
+        <MappingFragment StoreEntitySet="Sub_Category">
+          <ScalarProperty Name="Sub_Category_Id" ColumnName="Sub_Category_Id" />
+          <ScalarProperty Name="Sub_Category_Name" ColumnName="Sub_Category_Name" />
+          <ScalarProperty Name="Category_Status" ColumnName="Category_Status" />
+          <ScalarProperty Name="Create_At" ColumnName="Create_At" />
+          <ScalarProperty Name="Remote_Action" ColumnName="Remote_Action" />
+          <ScalarProperty Name="Category_Id" ColumnName="Category_Id" />
+          <ScalarProperty Name="Sub_Category1" ColumnName="Sub_Category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suppliers">
+      <EntityTypeMapping TypeName="DBModel.Supplier">
+        <MappingFragment StoreEntitySet="Supplier">
+          <ScalarProperty Name="Supplier_Id" ColumnName="Supplier_Id" />
+          <ScalarProperty Name="Supplier_Name" ColumnName="Supplier_Name" />
+          <ScalarProperty Name="Supplier_Company" ColumnName="Supplier_Company" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Create_At" ColumnName="Create_At" />
+          <ScalarProperty Name="Remote_Action" ColumnName="Remote_Action" />
+          <ScalarProperty Name="Supplier1" ColumnName="Supplier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Supplier_Item">
+      <EntityTypeMapping TypeName="DBModel.Supplier_Item">
+        <MappingFragment StoreEntitySet="Supplier_Item">
+          <ScalarProperty Name="Item_Id" ColumnName="Item_Id" />
+          <ScalarProperty Name="Supplier_Id" ColumnName="Supplier_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Supplier_Phone">
+      <EntityTypeMapping TypeName="DBModel.Supplier_Phone">
+        <MappingFragment StoreEntitySet="Supplier_Phone">
+          <ScalarProperty Name="Supplier_Id" ColumnName="Supplier_Id" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Supplier_Stock">
+      <EntityTypeMapping TypeName="DBModel.Supplier_Stock">
+        <MappingFragment StoreEntitySet="Supplier_Stock">
+          <ScalarProperty Name="SS_ID" ColumnName="SS_ID" />
+          <ScalarProperty Name="Invoice_No" ColumnName="Invoice_No" />
+          <ScalarProperty Name="Invoice_Date" ColumnName="Invoice_Date" />
+          <ScalarProperty Name="Stock_Total_Price" ColumnName="Stock_Total_Price" />
+          <ScalarProperty Name="Stock_Discount" ColumnName="Stock_Discount" />
+          <ScalarProperty Name="Create_At" ColumnName="Create_At" />
+          <ScalarProperty Name="Remote_Action" ColumnName="Remote_Action" />
+          <ScalarProperty Name="Supplier_Id" ColumnName="Supplier_Id" />
+          <ScalarProperty Name="Supplier_Stock1" ColumnName="Supplier_Stock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Supplier_Stock_Item">
+      <EntityTypeMapping TypeName="DBModel.Supplier_Stock_Item">
+        <MappingFragment StoreEntitySet="Supplier_Stock_Item">
+          <ScalarProperty Name="Supplier_Invoice_No" ColumnName="Supplier_Invoice_No" />
+          <ScalarProperty Name="Item_Ref_Id" ColumnName="Item_Ref_Id" />
+          <ScalarProperty Name="Item_Stock" ColumnName="Item_Stock" />
+          <ScalarProperty Name="Item_Buying_Price" ColumnName="Item_Buying_Price" />
+          <ScalarProperty Name="Buying_Stock" ColumnName="Buying_Stock" />
+          <ScalarProperty Name="Buying_Discount" ColumnName="Buying_Discount" />
+          <ScalarProperty Name="Create_At" ColumnName="Create_At" />
+          <ScalarProperty Name="Remote_Action" ColumnName="Remote_Action" />
+          <ScalarProperty Name="SS_Id" ColumnName="SS_Id" />
+          <ScalarProperty Name="Item_Id" ColumnName="Item_Id" />
+          <ScalarProperty Name="Supplier_Stock_Item1" ColumnName="Supplier_Stock_Item" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="DBModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="Fname" ColumnName="Fname" />
+          <ScalarProperty Name="Lname" ColumnName="Lname" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserRole" ColumnName="UserRole" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+          <ScalarProperty Name="RemoteAction" ColumnName="RemoteAction" />
+          <ScalarProperty Name="Access_Level" ColumnName="Access_Level" />
+          <ScalarProperty Name="User1" ColumnName="User" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_DeleteUser" FunctionName="DBModel.Store.sp_DeleteUser" />
+    <FunctionImportMapping FunctionImportName="sp_insertUser" FunctionName="DBModel.Store.sp_insertUser" />
+    <FunctionImportMapping FunctionImportName="sp_SelectUsers" FunctionName="DBModel.Store.sp_SelectUsers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.sp_SelectUsers_Result">
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="BirthDay" ColumnName="BirthDay" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserRole" ColumnName="UserRole" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+          <ScalarProperty Name="AccessLevel" ColumnName="AccessLevel" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_UpdateUser" FunctionName="DBModel.Store.sp_UpdateUser" />
+  </EntityContainerMapping>
+</Mapping>

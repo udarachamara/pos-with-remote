@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Category_Id" />
+    </Key>
+    <Property Name="Category_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Category_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Category_Status" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Create_At" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Remote_Action" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Category1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Customer_Id" />
+    </Key>
+    <Property Name="Customer_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NIC" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Fname" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Lname" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Birthday" Type="DateTime" Precision="0" />
+    <Property Name="Phone" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+    <Property Name="Customer_Status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Due_Balance" Type="Double" />
+    <Property Name="Create_At" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Remote_Action" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Customer1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Customer_Phone">
+    <Key>
+      <PropertyRef Name="Customer_Id" />
+      <PropertyRef Name="Phone" />
+    </Key>
+    <Property Name="Customer_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Discount_Card">
+    <Key>
+      <PropertyRef Name="Card_No" />
+    </Key>
+    <Property Name="Card_No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Create_At" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Remote_Action" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Customer_Id" Type="Int32" Nullable="false" />
+    <Property Name="Discount_Card1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Invoice">
+    <Key>
+      <PropertyRef Name="Invoice_Id" />
+    </Key>
+    <Property Name="Invoice_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Next_Payment" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Total_Bill_Price" Type="Double" />
+    <Property Name="Sale_Type" Type="Double" />
+    <Property Name="Sale_Status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Sale_Ref_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Bill_Discount" Type="Double" />
+    <Property Name="Due_Date" Type="DateTime" Precision="0" />
+    <Property Name="Create_At" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Remote_Action" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="User_Id" Type="Int32" Nullable="false" />
+    <Property Name="Customer_Id" Type="Int32" Nullable="false" />
+    <Property Name="Invoice1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Invoice_Item">
+    <Key>
+      <PropertyRef Name="Item_Id" />
+    </Key>
+    <Property Name="Item_Sell_Price" Type="Double" />
+    <Property Name="Item_Quantity" Type="Int32" />
+    <Property Name="Create_At" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Remote_Action" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Item_Id" Type="Int32" Nullable="false" />
+    <Property Name="Invoice_Id" Type="Int32" Nullable="false" />
+    <Property Name="Invoice_Item1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="Item_Id" />
+    </Key>
+    <Property Name="Item_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Item_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Retail_Price" Type="Double" />
+    <Property Name="Retail_Discount" Type="Double" />
+    <Property Name="Unit" Type="Int32" />
+    <Property Name="Category" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Sub_Category" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Min_Stock" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Stock_Quantity" Type="Int32" />
+    <Property Name="label_Price" Type="Double" />
+    <Property Name="Barcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Wholesale_Price" Type="Double" />
+    <Property Name="Wholesale_Discount" Type="Double" />
+    <Property Name="Status" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Stock_Updated_At" Type="DateTime" Precision="3" />
+    <Property Name="Remote_Action" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Sub_Category_Id" Type="Int32" Nullable="false" />
+    <Property Name="Item1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Overdue_Invoice">
+    <Key>
+      <PropertyRef Name="Invoice_Id" />
+    </Key>
+    <Property Name="Invoice_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Invoice_Date" Type="DateTime" Precision="0" />
+    <Property Name="Stock_Discount" Type="Double" />
+    <Property Name="Overdue_Invoice1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="Payment_Id" />
+    </Key>
+    <Property Name="Payment_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Payment_Type" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Amount" Type="Double" />
+    <Property Name="Create_At" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Remote_Action" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Invoice_id" Type="Int32" Nullable="false" />
+    <Property Name="Payment1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Regular_Invoice">
+    <Key>
+      <PropertyRef Name="Invoice_Id" />
+    </Key>
+    <Property Name="Invoice_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Paid_Amount" Type="Double" />
+    <Property Name="Regular_Invoice1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Sub_Category">
+    <Key>
+      <PropertyRef Name="Sub_Category_Id" />
+    </Key>
+    <Property Name="Sub_Category_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sub_Category_Name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Category_Status" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Create_At" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Remote_Action" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Category_Id" Type="Int32" Nullable="false" />
+    <Property Name="Sub_Category1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="Supplier_Id" />
+    </Key>
+    <Property Name="Supplier_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Supplier_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Supplier_Company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Create_At" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Remote_Action" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Supplier1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Supplier_Item">
+    <Key>
+      <PropertyRef Name="Item_Id" />
+      <PropertyRef Name="Supplier_Id" />
+    </Key>
+    <Property Name="Item_Id" Type="Int32" Nullable="false" />
+    <Property Name="Supplier_Id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Supplier_Phone">
+    <Key>
+      <PropertyRef Name="Supplier_Id" />
+      <PropertyRef Name="Phone" />
+    </Key>
+    <Property Name="Supplier_Id" Type="Int32" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Supplier_Stock">
+    <Key>
+      <PropertyRef Name="SS_ID" />
+    </Key>
+    <Property Name="SS_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Invoice_No" Type="Int32" Nullable="false" />
+    <Property Name="Invoice_Date" Type="DateTime" Precision="0" />
+    <Property Name="Stock_Total_Price" Type="Double" />
+    <Property Name="Stock_Discount" Type="Double" />
+    <Property Name="Create_At" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Remote_Action" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Supplier_Id" Type="Int32" Nullable="false" />
+    <Property Name="Supplier_Stock1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Supplier_Stock_Item">
+    <Key>
+      <PropertyRef Name="Item_Id" />
+    </Key>
+    <Property Name="Supplier_Invoice_No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Item_Ref_Id" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Item_Stock" Type="Int32" />
+    <Property Name="Item_Buying_Price" Type="Double" />
+    <Property Name="Buying_Stock" Type="Int32" />
+    <Property Name="Buying_Discount" Type="Double" />
+    <Property Name="Create_At" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Remote_Action" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="SS_Id" Type="Int32" Nullable="false" />
+    <Property Name="Item_Id" Type="Int32" Nullable="false" />
+    <Property Name="Supplier_Stock_Item1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="User_Id" />
+    </Key>
+    <Property Name="User_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fname" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Lname" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Birthday" Type="DateTime" Precision="0" />
+    <Property Name="Username" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserRole" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="CreateAt" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="RemoteAction" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Access_Level" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="User1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="EDM" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Customer_Phone" EntityType="Self.Customer_Phone" />
+    <EntitySet Name="Discount_Card" EntityType="Self.Discount_Card" />
+    <EntitySet Name="Invoices" EntityType="Self.Invoice" />
+    <EntitySet Name="Invoice_Item" EntityType="Self.Invoice_Item" />
+    <EntitySet Name="Items" EntityType="Self.Item" />
+    <EntitySet Name="Overdue_Invoice" EntityType="Self.Overdue_Invoice" />
+    <EntitySet Name="Payments" EntityType="Self.Payment" />
+    <EntitySet Name="Regular_Invoice" EntityType="Self.Regular_Invoice" />
+    <EntitySet Name="Sub_Category" EntityType="Self.Sub_Category" />
+    <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
+    <EntitySet Name="Supplier_Item" EntityType="Self.Supplier_Item" />
+    <EntitySet Name="Supplier_Phone" EntityType="Self.Supplier_Phone" />
+    <EntitySet Name="Supplier_Stock" EntityType="Self.Supplier_Stock" />
+    <EntitySet Name="Supplier_Stock_Item" EntityType="Self.Supplier_Stock_Item" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <FunctionImport Name="sp_DeleteUser">
+      <Parameter Name="User_Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_insertUser" ReturnType="Collection(Decimal)">
+      <Parameter Name="Fname" Mode="In" Type="String" />
+      <Parameter Name="Lname" Mode="In" Type="String" />
+      <Parameter Name="Phone" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="Birthday" Mode="In" Type="DateTime" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="UserRole" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="String" />
+      <Parameter Name="RemoteAction" Mode="In" Type="String" />
+      <Parameter Name="Access_Level" Mode="In" Type="String" />
+      <Parameter Name="User" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_SelectUsers" ReturnType="Collection(DBModel.sp_SelectUsers_Result)">
+      <Parameter Name="Logged_User_Role" Mode="In" Type="String" />
+      <Parameter Name="User_Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_UpdateUser">
+      <Parameter Name="User_Id" Mode="In" Type="Int32" />
+      <Parameter Name="Fname" Mode="In" Type="String" />
+      <Parameter Name="Lname" Mode="In" Type="String" />
+      <Parameter Name="Phone" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="Birthday" Mode="In" Type="DateTime" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="UserRole" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="String" />
+      <Parameter Name="RemoteAction" Mode="In" Type="String" />
+      <Parameter Name="Access_Level" Mode="In" Type="String" />
+      <Parameter Name="User" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_SelectUsers_Result">
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Phone" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" />
+    <Property Type="DateTime" Name="BirthDay" Nullable="true" />
+    <Property Type="String" Name="UserName" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="UserRole" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="10" />
+    <Property Type="Binary" Name="CreateAt" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="AccessLevel" Nullable="true" MaxLength="10" />
+  </ComplexType>
+</Schema>

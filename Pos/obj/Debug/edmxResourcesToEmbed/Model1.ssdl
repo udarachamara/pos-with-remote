@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Fname" Type="nchar" MaxLength="20" />
+    <Property Name="Lname" Type="nchar" MaxLength="20" />
+    <Property Name="Phone" Type="nchar" MaxLength="15" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="BirthDay" Type="date" />
+    <Property Name="Username" Type="nchar" MaxLength="20" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="nchar" MaxLength="10" />
+    <Property Name="CreateAt" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="RemoteAction" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <EntityContainer Name="DBModelStoreContainer">
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
