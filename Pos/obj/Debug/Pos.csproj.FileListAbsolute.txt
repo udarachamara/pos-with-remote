@@ -26,3 +26,21 @@ E:\development\pos\Pos\obj\Debug\BookStore.ui.tasks.settings.FormUser.resources
 E:\development\pos\Pos\obj\Debug\Pos.csproj.GenerateResource.Cache
 E:\development\pos\Pos\obj\Debug\Pos.exe
 E:\development\pos\Pos\obj\Debug\Pos.pdb
+E:\development\Pos new\Pos\bin\Debug\Pos.exe
+E:\development\Pos new\Pos\bin\Debug\DB.mdf
+E:\development\Pos new\Pos\bin\Debug\DB_log.ldf
+E:\development\Pos new\Pos\bin\Debug\Pos.exe.config
+E:\development\Pos new\Pos\bin\Debug\EntityFramework.dll
+E:\development\Pos new\Pos\bin\Debug\EntityFramework.SqlServer.dll
+E:\development\Pos new\Pos\bin\Debug\EntityFramework.xml
+E:\development\Pos new\Pos\bin\Debug\EntityFramework.SqlServer.xml
+E:\development\Pos new\Pos\obj\Debug\Pos.ui.FormDashboard.resources
+E:\development\Pos new\Pos\obj\Debug\Pos.FormLogin.resources
+E:\development\Pos new\Pos\obj\Debug\Pos.Properties.Resources.resources
+E:\development\Pos new\Pos\obj\Debug\Pos.ui.tasks.FormHome.resources
+E:\development\Pos new\Pos\obj\Debug\Pos.ui.tasks.settings.FormUser.resources
+E:\development\Pos new\Pos\obj\Debug\Pos.csproj.GenerateResource.Cache
+E:\development\Pos new\Pos\obj\Debug\Pos.exe
+E:\development\Pos new\Pos\obj\Debug\Pos.pdb
+E:\development\Pos new\Pos\bin\Debug\Pos.pdb
+E:\development\Pos new\Pos\obj\Debug\Pos.csprojResolveAssemblyReference.cache

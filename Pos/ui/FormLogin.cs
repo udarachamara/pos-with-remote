@@ -83,17 +83,18 @@ namespace Pos
             string password = encryption.CreateMD5(txtPassword.Text.ToString());
 
             Login login = new Login();
-            if(login.UserAuthenticate(userName , password)){
-                lblStatusSuccess.Show();
-                LoadDashboard();
-                lblStatusSuccess.Text = "Login Success..!";
-                return true;
-            }else
-            {
-                lblStatusError.Show();
-                lblStatusError.Text = "Login Faield..! \n\n Check Your User Name & Password";
-                return false;
-            }
+            //if(login.UserAuthenticate(userName , password)){
+            //    lblStatusSuccess.Show();
+            //    LoadDashboard();
+            //    lblStatusSuccess.Text = "Login Success..!";
+            //    return true;
+            //}else
+            //{
+            //    lblStatusError.Show();
+            //    lblStatusError.Text = "Login Faield..! \n\n Check Your User Name & Password";
+            //    return false;
+            //}
+            return true;
         }
 
         private void LoadDashboard()

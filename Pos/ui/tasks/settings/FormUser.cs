@@ -1,5 +1,4 @@
-﻿using BookStore.models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,13 +15,13 @@ namespace Pos.ui.tasks.settings
         public FormUser()
         {
             InitializeComponent();
-            using (var context = new DBEntities())
-            {
-                var result = context.sp_SelectUsers("admin",1);
-                this.dataGridViewUser.DataSource = result;
+            //using (var context = new DBEntities())
+            //{
+            //    var result = context.sp_SelectUsers("admin",1);
+            //    this.dataGridViewUser.DataSource = result;
 
 
-            }
+            //}
         }
     }
 }

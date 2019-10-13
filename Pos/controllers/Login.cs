@@ -1,5 +1,4 @@
-﻿using Pos.models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,35 +30,35 @@ namespace Pos
         ///<summary>
         ///Returns the true if exist valid user for given username and password other wise false
         ///</summary>
-        public bool UserAuthenticate(string username , string password)
-        {
-            using (var context = new DBEntities())
-            {
-                try
-                {
-                    var user = context.Users.Where(u => u.Username == username && u.Password == password).First();
-                    if (user.Fname != "")
-                    {
-                        Fname = user.Fname;
-                        Phone = user.Phone;
-                        Email = user.Email;
-                        UserRole = user.UserRole;
-                        LoginStatus = true;
-                        return true;
-                    }
-                    else
-                    {
-                        LoginStatus = false;
-                        return false;
-                    }
-                }
-                catch(Exception)
-                {
-                    return false;
-                }
+        //public bool UserAuthenticate(string username, string password)
+        //{
+        //    using (var context = new DBEntities())
+        //    {
+        //        try
+        //        {
+        //            var user = context.Users.Where(u => u.Username == username && u.Password == password).First();
+        //            if (user.Fname != "")
+        //            {
+        //                Fname = user.Fname;
+        //                Phone = user.Phone;
+        //                Email = user.Email;
+        //                UserRole = user.UserRole;
+        //                LoginStatus = true;
+        //                return true;
+        //            }
+        //            else
+        //            {
+        //                LoginStatus = false;
+        //                return false;
+        //            }
+        //        }
+        //        catch(Exception)
+        //        {
+        //            return false;
+        //        }
                 
-            }
-        }
+        //    }
+        //}
 
         
     }
